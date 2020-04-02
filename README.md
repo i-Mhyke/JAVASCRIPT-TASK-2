@@ -1,0 +1,2 @@
+# JAVASCRIPT TASK 2
+ 
