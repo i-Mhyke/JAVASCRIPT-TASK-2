@@ -15,8 +15,14 @@
 			{principal: 2000, time: 3}
 		];
 
-		//interest calculator function with filtered data array as argument
-		const interestCalculator = (value) => {
+			//interest calculator function with filtered data array as argument
+		const interestCalculator = (data) => {
+			
+			//Interest data array
+			const interestData = new Array();
+
+			//loop through data array
+			data.forEach(value =>{
 			if (value.principal >= 2500 && (value.time > 1 && value.time < 3) ){
 				 value.rate = 3;
 			}else if(value.principal >= 2500 && value.time >= 3 ){
@@ -27,21 +33,21 @@
 				value.rate = 1
 			}
 
-			//Interest data array
-			const interestData = new Array();
-
 			//Calculating the interest of each object in the array
 			value.interest = (value.principal * value.time * value.rate) / 100;
-			
+
+			//Push data values to interestData array
+			interestData.push(value);
+
 			//Console array of interestData
 			console.log(interestData);	
 			
 			//Pushing new objects with new keys and values to interestData array
-			return interestData.push(value);
+			return interestData;
+			})	
 		};
 
-		//Filter and sort each object in the data array
-		data.filter(interestCalculator)
+		interestCalculator(data)
 	</script>
 </body>
 </html>
