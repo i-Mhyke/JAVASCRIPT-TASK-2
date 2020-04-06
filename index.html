@@ -4,17 +4,18 @@
 	<title>Javascript Task</title>
 </head>
 <body>
+	<h1>Javascript task 2</h1>
 
 	<script>
-		
+		//Data array of objects
 		const data = [
 			{principal: 2500, time: 1.8},
 			{principal: 1000, time: 5},
 			{principal: 3000, time: 1},
 			{principal: 2000, time: 3}
 		];
-		const interestData = [ ];
 
+		//interest calculator function with filtered data array as argument
 		const interestCalculator = (value) => {
 			if (value.principal >= 2500 && (value.time > 1 && value.time < 3) ){
 				 value.rate = 3;
@@ -25,13 +26,22 @@
 			}else{
 				value.rate = 1
 			}
+
+			//Empty Interest data array
+			const interestData = new Array();
+			
+			//Calculating the interest of each object in the array
 			value.interest = (value.principal * value.time * value.rate) / 100;
-
+			
+			//Console array of interestData
+			console.log(interestData);	
+			
+			//Pushing new objects with new keys and values to interestData array
 			return interestData.push(value);
-		}
-		console.log(interestData);
-		data.filter(interestCalculator)
+		};
 
+		//Filter and sort each object in the data array
+		data.filter(interestCalculator)
 	</script>
 </body>
 </html>
