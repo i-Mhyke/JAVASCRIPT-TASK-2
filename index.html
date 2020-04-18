@@ -7,7 +7,50 @@
 	<h1>Javascript task 3</h1>
 
 	<script>
-		
+		//Create function and pass value(number) as the argument
+		const randomNumbers = (value) =>{
+
+			//Create array to for the numbers created throught the loop
+			let numbersArray = new Array();
+
+			// loop through the number given to get the numbers from 1 to the given number
+			for(let number=1; number<=value; number++){
+				// Pass the items into the numbersArray created 
+					numbersArray.push(number)
+				}
+
+				// Loop through the array to check for various conditions 
+			 NumbersArray = numbersArray.map(numbers =>{
+				if(numbers % 2 == 0 && numbers % 3 == 0 && numbers % 5 == 0){
+					numbers = "yu-gi-oh"
+				}
+				else if(numbers % 2 == 0 && numbers % 3 == 0){
+					numbers = "yu-gi"
+				}
+				else if(numbers % 2 == 0 && numbers % 5 == 0){
+					numbers = "yu-oh"
+				}
+				else if(numbers % 3 == 0 && numbers % 5 == 0){
+					numbers = "gi-oh"
+				}
+				else if(numbers % 2 == 0){
+					numbers = "yu"
+				}
+				else if(numbers % 3 == 0){
+					numbers = "gi"
+				}
+				else if(numbers % 5 == 0){
+					numbers = "oh"
+				}
+
+				return numbers;
+			});
+
+				console.log(NumbersArray);
+		};
+		//Call the functions with required value
+		randomNumbers(100);
+		randomNumbers(250);
 	</script>
 </body>
 </html>
